@@ -29,7 +29,7 @@ We have provided a standalone Google Colab notebook (`DPM_Wikitext_ZeroShot_Eval
 | **DPM (ReLU)** | 42 | 32         | 3.17         | 40.01%             | 81.28               | 28.30%                 | 25.12% |
 | **DPM (ReLU)** | 105 | 16         | 2.81         | 43.76%             | 59.81               | 33.66%                 | 25.19% |
 | **DPM (ReLU)** | 42 | 16         | 2.71         | 44.81%             | 44.67               | 34.17%                 | 25.67% |
-| **DPM (ReLU) ** | 999 | 16     | 2.69      | 44.26%       | 44.05             | 33.15%           | 25.85% |
+| **DPM (ReLU)** | 999 | 16     | 2.69      | 44.26%       | 44.05             | 33.15%           | 25.85% |
 
 ## 🏗️ Architecture Specifications
 
