@@ -1,6 +1,8 @@
 # DPM-15L
 Look Mom,  No Softmax! Replaces Softmax with Decoupled Polynomial Mapping in Self Attention and Loss determination. Code and evaluation scripts for DPM-15L, a 25M parameter No-Softmax transformer. Next Token Accuracy examples over 44%.
 
+Decoupled Polynomial Mapping (DPM) architecture replaces standard exponential Softmax operations in self-attention and loss computation in a language model transformer.  DPM implements a learnable multi-term polynomial, $a \cdot r^2 + b \cdot r^z$ (where $r$ represents the pre-activation scores). By optimizing the coefficients $a$, $b$, and $z$ during training, DPM enables layer-specific learned activation curves. Evaluating a 25M-parameter DPM transformer on WikiText-103 demonstrates a substantial reduction in validation loss, achieving a 10-run average perplexity of 15.61 compared to a 35.78 ReLU-squared baseline. Correlation studies confirm this improved validation loss efficiently maps to accelerated next-token prediction accuracy. We address initial routing vulnerabilities observed during lexical perturbation by introducing a 1.5\% token swap ablation, which restores robust routing stability. DPM's scalability and zero-shot capabilities are further validated by a single-epoch WebText corpus training run, achieving 70.5\% overall syntactic accuracy across 67,000 BLiMP evaluation pairs.
+
 # TheToyChest: DPM-15L 
 
 **A 25M parameter causal language model utilizing Decoupled Polynomial Mapping (DPM) and true mathematical sparsity.**
