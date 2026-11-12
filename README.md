@@ -11,9 +11,9 @@ This License and the rights granted hereunder will terminate automatically if th
 
 # TheToyChest: DPM-15L 
 
-**A 25M parameter causal language model utilizing Dual-Polynomial Attention (DPA) and true mathematical sparsity.**
+**A 25M parameter causal language model utilizing Decoupled Polynomial Mapping (DPM) and true mathematical sparsity.**
 
-This repository contains the model architecture, training configurations, and zero-shot evaluation scripts for **DPM-15L**. By completely abandoning the standard Softmax attention bottleneck and replacing it with a zero-floored pure `ReLU` activation, this architecture achieves strict rank-order mathematical sparsity while maintaining stable gradient flow via a learned polynomial loss landscape.
+This repository contains the model architecture, training configurations, and zero-shot evaluation scripts for **DPM-15L**. This architecture removes Softmax in self attention and in loss determination and replaces it with DPM, a zero-floored `ReLU` activation and learned polynomial expansion.
 
 ## 🚀 Quick Start: Zero-Shot Evaluation
 
