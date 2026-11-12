@@ -13,7 +13,7 @@ This License and the rights granted hereunder will terminate automatically if th
 
 **A 25M parameter causal language model utilizing Decoupled Polynomial Mapping (DPM) and true mathematical sparsity.**
 
-This repository contains the model architecture, training configurations, and zero-shot evaluation scripts for **DPM-15L**. This architecture removes Softmax in self attention and in loss determination and replaces it with DPM, a zero-floored `ReLU` activation and learned polynomial expansion.
+This repository contains the model architecture, training configurations, and zero-shot evaluation scripts for a 15 layer DPM language model transformer. This architecture removes Softmax in self attention and in loss determination and replaces it with DPM, a zero-floored `ReLU` activation and learned polynomial expansion.
 
 ## 🚀 Quick Start: Zero-Shot Evaluation
 
@@ -26,18 +26,16 @@ We have provided a standalone Google Colab notebook (`DPM_Wikitext_ZeroShot_Eval
 
 **Model Weights:** Hosted on Hugging Face at [TheToyChest/DPM-15L](https://huggingface.co/TheToyChest/DPM-15L).
 
-*Note: The current champion weights utilize pure ReLU. When evaluating these weights locally, ensure `Config.continuous_abla = False`.*
-
 ## 📊 Empirical Proof: The Pareto Frontier
-**A Note on Validation Loss:** Because DPM and standard Softmax operate on fundamentally different mathematical loss frameworks (a zero-floored polynomial landscape vs. a dense exponential fraction), their raw NLL Validation Loss values cannot be directly mapped 1:1 against each other. To provide a rigorous, objective comparison, **Next-Token Accuracy** and **Wikitext-103 Zero-Shot Generalization** serve as the framework-agnostic benchmarks used to rate and compare model performance.
+**A Note on Validation Loss:** DPM utilizes ReLU, a rectifying function, and zeros out some signals. This alters the calculation for NLL Validation Loss compared to Softmax, which does not zero out any signals.  Because DPM and standard Softmax operate on different mathematical loss frameworks (a zero-floored polynomial  vs. a dense exponential ), their raw NLL Validation Loss values cannot be directly mapped 1:1 against each other without further context. To provide an objective comparison, **Next-Token Accuracy** and **Wikitext-103 Zero-Shot Generalization** results are used as objective benchmarks to compare model performance.
 
 | Model Config | Seed | Batch Size | OWT Val Loss | OWT Next-Token Acc | Wiki-103 Perplexity | Wiki-103 Zero-Shot Acc | HellaSwag |
 | :---         | :---: | :---:     | :---:         | :---:             | :---:               | :---:                   | :---: |
-| **Softmax Baseline** | 42/105 | 32 | 4.05       | 31.14%             | 178.44               | 23.72%                 | 25.22% |
+| **Softmax Baseline** | 105 | 16 | 4.04       | 30.88%             | 179.38               | 23.47%                 | 25.52% |
 | **DPM (ReLU)** | 42 | 32         | 3.17         | 40.01%             | 81.28               | 28.30%                 | 25.12% |
 | **DPM (ReLU)** | 105 | 16         | 2.81         | 43.76%             | 59.81               | 33.66%                 | 25.19% |
 | **DPM (ReLU)** | 42 | 16         | 2.71         | 44.81%             | 44.67               | 34.17%                 | 25.67% |
-| **DPM (ReLU) 🏆** | 999 | 16     | **2.69**      | **44.26%**       | **44.05**             | **33.15%**           | **25.85%** |
+| **DPM (ReLU) ** | 999 | 16     | 2.69      | 44.26%       | 44.05             | 33.15%           | 25.85% |
 
 ## 🏗️ Architecture Specifications
 
@@ -46,12 +44,12 @@ We have provided a standalone Google Colab notebook (`DPM_Wikitext_ZeroShot_Eval
 * **Context Window:** 512 Tokens
 * **Positional Embeddings:** RoPE (Rotary Position Embedding)
 * **Normalization:** RMSNorm (Post-Norm Configuration + Q/K Normalization)
-* **Attention Activation:** Pure ReLU 
+* **Attention Activation:** Pure ReLU and learned polynomial expansion 
 * **Parameter Count:** 25 Million
 * **Training Data:** 1 Epoch on OpenWebText
 
 ## 📂 Repository Contents
 
-* `DPM_Wikitext_ZeroShot_Eval.ipynb`: Automated Google Colab script for reproducing zero-shot evaluations.
-* *(Add other filenames here as you push them, e.g., `train.py`, `model.py`)*
+* `DPM_Wikitext_ZeroShot_Eval.ipynb`: This is an automated Google Colab script for reproducing zero-shot evaluations.
+
 
