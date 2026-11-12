@@ -1,14 +1,6 @@
 # DPM-15L
 Look Mom,  No Softmax! Replaces Softmax with Decoupled Polynomial Mapping in Self Attention and Loss determination. Code and evaluation scripts for DPM-15L, a 25M parameter No-Softmax transformer. Next Token Accuracy examples over 44%.
 
-#LICENSE
-Commercial and Non-Commercial Research & Development License
-Copyright (c), 2026, Submitting Author(s). All rights reserved.
-
-You are free to use the software to engage in all forms of Research and Development, commercial and non-commercial, including for academic and non-profit purposes and internal commercial purposes ("Purposes"). Purposes does not include commercial exploitation. Licensor hereby grants to the Licensee a worldwide, non-exclusive, non-transferable, royalty-free, revocable license to reproduce, modify, create derivative works from, and use the Software for the Purposes.  No other purposes are permitted.  To the extent patent rights exist or are obtained, no patent rights are granted beyond the Purposes.
-Disclaimer of Warranty THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE LICENSOR BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-This License and the rights granted hereunder will terminate automatically if the Licensee fails to comply with any terms herein.
-
 # TheToyChest: DPM-15L 
 
 **A 25M parameter causal language model utilizing Decoupled Polynomial Mapping (DPM) and true mathematical sparsity.**
@@ -51,5 +43,13 @@ We have provided a standalone Google Colab notebook (`DPM_Wikitext_ZeroShot_Eval
 ## 📂 Repository Contents
 
 * `DPM_Wikitext_ZeroShot_Eval.ipynb`: This is an automated Google Colab script for reproducing zero-shot evaluations.
+
+* #LICENSE
+Commercial and Non-Commercial Research & Development License
+Copyright (c), 2026, Submitting Author(s). All rights reserved.
+
+You are free to use the software to engage in all forms of Research and Development, commercial and non-commercial, including for academic and non-profit purposes and internal commercial purposes ("Purposes"). Purposes does not include commercial exploitation. Licensor hereby grants to the Licensee a worldwide, non-exclusive, non-transferable, royalty-free, revocable license to reproduce, modify, create derivative works from, and use the Software for the Purposes.  No other purposes are permitted.  To the extent patent rights exist or are obtained, no patent rights are granted beyond the Purposes.
+Disclaimer of Warranty THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE LICENSOR BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+This License and the rights granted hereunder will terminate automatically if the Licensee fails to comply with any terms herein.
 
 
